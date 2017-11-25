@@ -1,3 +1,4 @@
+// Require Dependencies
 var Letter = require('./letter.js');
 var randomWord = require('random-words');
 

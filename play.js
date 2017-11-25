@@ -1,0 +1,30 @@
+// Require Dependencies
+var Word = require("./word.js");
+
+// Play Constructor
+var Play = function(){
+    this.word = new Word();
+    this.remainingGuesses = 10;
+    this.playStart = function(){
+        this.word.newWord();
+    };
+    this.guess =function(letter){
+        // runs wrongGuess function
+        var incorrect = this.word.wrongGuess(letter)
+        // if incorrect is true then remaining guesses are decreased
+        if (incorrect) {
+            this.remainingGuesses--
+        // display letter
+        } else {
+            console.log(this.word.wrongGuess(letter));
+        }
+        // display remaining guesses
+        this.progressUpdate();
+    };
+    this.progressUpdate = function(){
+        console.log(this.word.showProgress() + "Remaining Guesses" + this.remainingGuesses);
+    }
+};
+
+// Export Module
+module.exports = Play;
