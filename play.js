@@ -22,7 +22,7 @@ var Play = function(){
         this.progressUpdate();
     };
     this.progressUpdate = function(){
-        console.log(this.word.showProgress() + "Remaining Guesses" + this.remainingGuesses);
+        console.log(this.word.display() + "\nRemaining Guesses " + this.remainingGuesses + "\n");
     }
 };
 

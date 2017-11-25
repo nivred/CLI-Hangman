@@ -18,22 +18,22 @@ var Word = function(){
             // adds incorrect letter to the array
             this.guessedLetters.push(letter);
             // reduces amount of remaining guesses
-            if (this.currentWord.indexOf(toLowerCase()) === -1 && this.currentWord.indexOf(letter.toUpperCase()) === -1){
+            if (this.currentWord.indexOf(letter.toLowerCase()) === -1 && this.currentWord.indexOf(letter.toUpperCase()) === -1){
                 return true;
             } else {
                 return false;
             }
-        // if leeter already used display the following warning
+        // if letter already used display the following warning
         } else {
-            console.log(letter + "already used");
+            console.log(letter + " was already used");
         }
     }
     // display progress of word being solved
-    this.showProgress = function(){
+    this.display = function(){
         var wordProgress = "";
         for (var i=0; i < this.currentWord.length; i++){
             var letter = new Letter(this.currentWord[i]);
-            wordProgress += letter.showProgress(this.guessedLetters);
+            wordProgress += letter.display(this.guessedLetters)
         };
         return wordProgress;
     };

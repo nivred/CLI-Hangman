@@ -20,12 +20,12 @@ function playGame(game){
     .then(function(answer){
         game.guess(answer.guess);
         // checks if user won and starts new game
-        if(game.word.showProgress().indexOf('_') === -1){
-            console.log('CONGRATS! YOU WIN');
+        if(game.word.display().indexOf('_ ') === -1){
+            console.log('\nCONGRATS! YOU WIN\n');
             return newGame();
         // checks if user lost and starts new game
         } else if (game.remainingGuesses === 0){
-            console.log("YOU LOSE! GAME OVER \n The word was: "+ game.word.currentWord + "\n");
+            console.log("\nYOU LOSE! GAME OVER \n The word was: "+ game.word.currentWord + "\n");
             return newGame();
         }
         // recursively keep playing game
