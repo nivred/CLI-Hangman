@@ -8,22 +8,18 @@ var Play = function(){
     this.playStart = function(){
         this.word.newWord();
     };
-    this.guess =function(letter){
+    this.guess = function(letter){
         // runs wrongGuess function
-        var incorrect = this.word.wrongGuess(letter)
+        var incorrect = this.word.wrongGuess(letter);
         // if incorrect is true then remaining guesses are decreased
         if (incorrect) {
             this.remainingGuesses--
-        // display letter
-        } else {
-            console.log(this.word.wrongGuess(letter));
         }
-        // display remaining guesses
         this.progressUpdate();
     };
     this.progressUpdate = function(){
         console.log(this.word.display() + "\nRemaining Guesses " + this.remainingGuesses + "\n");
-    }
+    };
 };
 
 // Export Module

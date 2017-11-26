@@ -8,7 +8,7 @@ function newGame(){
     game.playStart();
     game.progressUpdate();
     playGame(game);
-}
+};
 
 function playGame(game){
     // prompts user to guess a letter
@@ -21,17 +21,17 @@ function playGame(game){
         game.guess(answer.guess);
         // checks if user won and starts new game
         if(game.word.display().indexOf('_ ') === -1){
-            console.log('\nCONGRATS! YOU WIN\n');
+            console.log("\nCONGRATS! YOU WIN\nThe word was: " + game.word.currentWord + "\n");
             return newGame();
         // checks if user lost and starts new game
         } else if (game.remainingGuesses === 0){
-            console.log("\nYOU LOSE! GAME OVER \n The word was: "+ game.word.currentWord + "\n");
+            console.log("\nYOU LOSE! GAME OVER\nThe word was: "+ game.word.currentWord + "\n");
             return newGame();
         }
         // recursively keep playing game
         playGame(game);
-    })
-}
+    });
+};
 
 // Start Game
 newGame();

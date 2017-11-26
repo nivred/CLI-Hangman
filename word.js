@@ -5,7 +5,7 @@ var randomWord = require('random-words');
 // Word Constructor
 var Word = function(){
     this.currentWord = "";
-    this.guess = [];
+    this.guessedLetters = [];
     // generates new word to be guessed
     this.newWord = function(){
         this.currentWord = randomWord();
@@ -26,8 +26,9 @@ var Word = function(){
         // if letter already used display the following warning
         } else {
             console.log(letter + " was already used");
+            return false;
         }
-    }
+    };
     // display progress of word being solved
     this.display = function(){
         var wordProgress = "";
